@@ -1,0 +1,25 @@
+<div class="flex justify-center">
+  <div class="grid grid-cols-2 gap-4 w-4/5">
+    <div
+      *ngFor="let pintura of pinturas"
+      class="p-2 border rounded-lg shadow-md"
+    >
+      <img
+        class="h-auto max-w-full rounded-lg"
+        [src]="pintura.thumbnailurl"
+        alt="{{ pintura.titulo }}"
+      />
+      <h3 class="text-center text-lg font-semibold mt-2">
+        {{ pintura.titulo }}
+      </h3>
+      <div class="flex justify-center mt-2">
+        <a
+          [routerLink]="['/pinturas/detalle/' + pintura.id]"
+          class="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+        >
+          Ver más
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
